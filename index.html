@@ -55,9 +55,12 @@ h2{font-size:1.12rem;margin:0 0 .3rem;line-height:1.45}
 .pos{font-size:.78rem;color:var(--muted);white-space:nowrap}
 .paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;
  padding:1.15rem 1.25rem}
-.pills{margin-bottom:.55rem;line-height:2.1}
+.pills{margin-bottom:.55rem;display:flex;flex-wrap:wrap;align-items:center;gap:6px 5px;line-height:1.5}
+/* 배지 줄바꿈(2026-09-13 아이폰 사고): 배지는 공백 없이 붙은 <span> 이라 줄을 바꿀 자리가 없다.
+   크롬은 경계에서 끊어 주지만 Safari 는 한 줄로 뻗어 페이지 전체가 축소됐다(BIS 논문, 배지 8개).
+   inline 줄바꿈에 기대지 말고 flex-wrap 으로 감싼다. 배지 하나가 한 줄보다 길 때만 안에서 접힌다. */
 .pill{font-size:.72rem;padding:2px 8px;border-radius:6px;background:var(--surface2);
- color:var(--muted);margin-right:5px;white-space:nowrap}
+ color:var(--muted);white-space:normal;max-width:100%}
 .pill.hot{background:var(--accent-soft);color:var(--accent);font-weight:700}
 .pill.type{background:var(--warm-soft);color:var(--warm)}
 .meta{font-size:.78rem;color:var(--muted);margin:.15rem 0 0}
